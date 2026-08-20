@@ -1,0 +1,1 @@
+import express from'express';import{routes}from'./domain.mjs';const d=routes(),a=express();a.get('/health',(_,r)=>r.json({status:'ok',policies:d.items.length}));const p=Number(process.env.MESH_PORT)||21500;a.listen(p,'0.0.0.0',()=>console.log(`Service mesh governance service on 0.0.0.0:${p}`));
